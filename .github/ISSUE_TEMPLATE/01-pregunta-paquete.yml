@@ -1,0 +1,34 @@
+name: Pregunta sobre un paquete
+description: Dudas sobre el contenido, el formato o las reglas de un paquete de datos.
+title: "[Pregunta] "
+labels: ["pregunta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de preguntar, revisa el README, el diccionario y la procedencia del paquete.
+        **No pegues datos personales** en esta incidencia.
+  - type: input
+    id: desafio
+    attributes:
+      label: Desafío
+      description: Código del desafío, por ejemplo D1 o D5.
+    validations:
+      required: true
+  - type: input
+    id: paquete
+    attributes:
+      label: Paquete o archivo
+      description: Ruta dentro del repositorio, por ejemplo paquetes/D1-…/data/raw/archivo.csv
+    validations:
+      required: true
+  - type: textarea
+    id: pregunta
+    attributes:
+      label: Tu pregunta
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Qué intentaste o dónde lo buscaste

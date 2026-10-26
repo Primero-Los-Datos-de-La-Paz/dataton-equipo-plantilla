@@ -1,0 +1,28 @@
+# Validación ligera de la entrega: estructura y privacidad. Corta, para cuidar la cuota de minutos
+# de GitHub Actions de la organización. La evaluación completa la hace la organización al cierre.
+name: validar-entrega
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar herramientas
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+      - name: Estructura de la entrega
+        run: python -m dataton validar .
+      - name: Posibles datos personales
+        run: python -m dataton verificar-privacidad entrega

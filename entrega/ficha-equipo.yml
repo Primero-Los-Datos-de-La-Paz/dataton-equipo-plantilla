@@ -1,0 +1,12 @@
+# Ficha del equipo y de la entrega.
+equipo_id: null
+desafio: null                  # por ejemplo D1 o D5
+fichas_o_indicadores: []       # por ejemplo [D1-01, D1-05] o ["5.1"]
+conjuntos_trabajados:
+  - nombre: null
+    fuente: null               # identificador del catálogo (por ejemplo F010) o enlace
+    nivel_antes: null          # escala 0-7 (ver la línea base del paquete)
+    nivel_despues_propuesto: null
+procedimiento: null            # scripts | cuaderno | openrefine | qgis | pasos-manuales | mixto
+herramientas_usadas: []
+mejoras_para_validar: []       # cada mejora que se pedirá validar al responsable del dato
